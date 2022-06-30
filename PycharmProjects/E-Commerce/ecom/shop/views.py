@@ -17,7 +17,7 @@ def contact(request):
 def tracker(request):
     return HttpResponse("Your order is in transit")
 
-def prodView(request):
+def productView(request):
     return HttpResponse("This is ryzen 9 6900HX laptop with 32 gb of ram ")
 
 def checkout(request):
