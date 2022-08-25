@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <form method="post" action="{% url 'profile_update' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="col-12">
+                        <h5 class="form-title"><span>Profile Update</span></h5>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" value="{{user.first_name}}" name="first_name">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" value="{{user.last_name}}" name="last_name">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" class="form-control" name="email" value="{{user.email}}">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group">
+                            <label>Profile Pic</label>
+                            <input type="file" class="form-control" name="profile_pic">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select class="form-control">
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Select Gender</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group">
+                            <label>Joining Date</label>
+                            <div>
+                                <input type="text" class="form-control" value="28 dec 2020">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group">
+                            <label>Mobile Number</label>
+                            <input type="text" class="form-control" value="077 3499 9959">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group">
+                            <label>Change Password</label>
+                            <input type="password" class="form-control"
+                                   placeholder="Fill only if you want to change the password!" name="password">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <h5 class="form-title"><span>Address Information</span></h5>
+                    </div>
+
+
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group">
+                            <label>Present Address</label>
+                            <textarea class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group">
+                            <label>Permanent Address</label>
+                            <textarea class="form-control">86 </textarea>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Update Profile</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
